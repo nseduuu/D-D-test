@@ -24,7 +24,7 @@ namespace dandd.ViewModels
 
         public ClasseViewModel()
         {
-            _classes = new ObservableCollection<Classes>();
+            Classes = new ObservableCollection<Classes>();
             _classeServices = new ClasseServices();
         }
 
@@ -32,7 +32,7 @@ namespace dandd.ViewModels
 
         private async Task LoadSubRacesAsync()
         {
-            _classes = await _classeServices.GetClassesAsync();
+            Classes = await _classeServices.GetClassesAsync();
         }
 
         public void Dispose()

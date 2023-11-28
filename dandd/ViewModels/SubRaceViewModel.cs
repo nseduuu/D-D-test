@@ -23,7 +23,7 @@ namespace dandd.ViewModels
 
         public SubRaceViewModel()
         {
-            _subRaces = new ObservableCollection<SubRaces>();
+            SubRaces = new ObservableCollection<SubRaces>();
             _subRaceServices = new SubRaceServices();
         }
 
@@ -31,7 +31,7 @@ namespace dandd.ViewModels
 
         private async Task LoadSubRacesAsync()
         {
-            _subRaces = await _subRaceServices.GetSubRacesAsync();
+            SubRaces = await _subRaceServices.GetSubRacesAsync();
         }
 
         public void Dispose()
