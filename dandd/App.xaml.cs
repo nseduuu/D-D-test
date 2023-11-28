@@ -8,6 +8,8 @@ namespace dandd
             InitializeComponent();
 
             MainPage = new RaceView();
+            MainPage = new SubRacaView();
+            MainPage = new ClasseView();
         }
     }
 }
