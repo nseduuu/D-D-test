@@ -9,27 +9,29 @@ namespace dandd.ViewModels
     internal partial class SubRaceViewModel : ObservableObject, IDisposable
     {
 
-        private readonly SubRaceServices _subRaceService;
+        private readonly SubRaceServices _subRaceServices;
 
         [ObservableProperty]
         public string _Index;
         [ObservableProperty]
-        public string _Name;
+        public int _Name;
         [ObservableProperty]
         public string _Url;
-        public ObservableCollection<SubRaces> subRace;
+
+        [ObservableProperty]
+        public ObservableCollection<SubRaces> _subRaces;
 
         public SubRaceViewModel()
         {
-           subRace = new ObservableCollection<SubRaces>();
-            _subRaceService = new SubRaceServices();
+            _subRaces = new ObservableCollection<SubRaces>();
+            _subRaceServices = new SubRaceServices();
         }
 
-        public ICommand GetPostsCommand => new Command(async () => await LoadSubRacesAsync());
+        public ICommand GetSubRacesCommand => new Command(async () => await LoadSubRacesAsync());
 
         private async Task LoadSubRacesAsync()
         {
-          subRace = await _subRaceService.GetSubRacesAsync();
+            _subRaces = await _subRaceServices.GetSubRacesAsync();
         }
 
         public void Dispose()

@@ -21,12 +21,12 @@ namespace dandd.ViewModels
         [ObservableProperty]
         public string _Index;
         [ObservableProperty]
-        public int _Name;
+        public string _Name;
         [ObservableProperty]
         public string _Url;
 
         [ObservableProperty]
-        public ObservableCollection<Races> _races;
+        public ObservableCollection<Races> _Races;
 
         public RaceViewModel()
         {

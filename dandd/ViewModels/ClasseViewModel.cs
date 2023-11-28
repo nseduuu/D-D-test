@@ -10,19 +10,21 @@ namespace dandd.ViewModels
     internal partial class ClasseViewModel : ObservableObject, IDisposable
     {
 
+        private readonly ClasseServices _classeServices;
+
         [ObservableProperty]
-        public int _Id;
+        public string _Index;
         [ObservableProperty]
         public string _Name;
         [ObservableProperty]
         public string _Url;
 
-        public ObservableCollection<Classes> classes;
-        private readonly ClasseServices _classeServices;
+        [ObservableProperty]
+        public ObservableCollection<Classes> _classes;
 
         public ClasseViewModel()
         {
-            classes = new ObservableCollection<Classes>();
+            _classes = new ObservableCollection<Classes>();
             _classeServices = new ClasseServices();
         }
 
@@ -30,7 +32,7 @@ namespace dandd.ViewModels
 
         private async Task LoadSubRacesAsync()
         {
-            classes = await _classeServices.GetClassesAsync();
+            _classes = await _classeServices.GetClassesAsync();
         }
 
         public void Dispose()

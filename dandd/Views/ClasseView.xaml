@@ -30,7 +30,7 @@
              
              WidthRequest="331"
              HeightRequest="103"
-             HorizontalOptions="Fill" />
+             HorizontalOptions="Fill" />s
 
             <BoxView Color="#D9D9D9"
              Margin="20"
